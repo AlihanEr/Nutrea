@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Your Account - Nutrea</title>
+    <link rel="icon" type="image/png" href="assets/images/App logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .delete-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .delete-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .delete-title {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .delete-intro {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .delete-content h2 {
+            font-size: 1.8rem;
+            color: var(--accent-orange);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .delete-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .delete-content ol, .delete-content ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            padding-left: 2rem;
+        }
+
+        .delete-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .delete-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 140, 66, 0.1), rgba(255, 140, 66, 0.05));
+            border-left: 4px solid var(--accent-orange);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .warning-box p {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .info-box {
+            background-color: var(--background-card);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid rgba(62, 165, 115, 0.2);
+            margin: 2rem 0;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-orange);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--light-orange);
+            transform: translateY(-3px);
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-right: 1rem;
+            padding: 0.8rem 1.5rem;
+            background-color: transparent;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border: 2px solid var(--accent-orange);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-home:hover {
+            background-color: var(--accent-orange);
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .delete-content {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .delete-title {
+                font-size: 2rem;
+            }
+
+            .delete-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="assets/images/App logo.png" alt="N" class="logo-image">
+                    <span class="logo-text">utrea</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#features" class="nav-link">Powerful Features</a></li>
+                    <li><a href="index.html#how-it-works" class="nav-link">Why Choose Nutrea?</a></li>
+                    <li><a href="index.html#testimonials" class="nav-link">What Our Users Say</a></li>
+                    <li><a href="index.html#download" class="nav-link btn-download">Download App</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="delete-content">
+        <div class="delete-header">
+            <h1 class="delete-title">Delete Your Nutrea Account</h1>
+            <p class="delete-intro">If you no longer wish to use Nutrea, you can permanently delete your account from the app. This removes your profile and nutrition data from our production systems.</p>
+        </div>
+
+        <h2>How to delete your account (in the app)</h2>
+        <ol>
+            <li>Open the Nutrea app and go to <strong>Profile</strong>.</li>
+            <li>Tap <strong>Settings</strong> → <strong>Account</strong>.</li>
+            <li>Choose <strong>Delete Account</strong>.</li>
+            <li>Confirm your choice in the pop-up. You may be asked to type <strong>DELETE</strong> for security.</li>
+        </ol>
+
+        <div class="warning-box">
+            <p>⚠️ This action is permanent. Once deleted, your account and data cannot be recovered.</p>
+        </div>
+
+        <h2>What will be deleted</h2>
+        <ul>
+            <li>Your profile (name, email, preferences)</li>
+            <li>Nutrition logs, photos, goals and progress</li>
+            <li>In-app measurements and insights</li>
+        </ul>
+        <p>We may retain minimal records required by law (e.g., billing logs) for the statutory period.</p>
+
+        <h2>After you delete</h2>
+        <div class="info-box">
+            <ul style="margin-bottom: 0;">
+                <li><strong>You will be logged out on all devices.</strong></li>
+                <li>Deletion is initiated immediately and typically completes within minutes; full removal from backups may take up to 30 days due to safe disaster-recovery practices.</li>
+                <li>If you signed up via Apple/Google, revoke access in your Apple/Google account settings.</li>
+            </ul>
+        </div>
+
+        <p>If you have any questions or need assistance, please contact us at <a href="mailto:contact@foodways.be" style="color: var(--accent-orange); text-decoration: none;">contact@foodways.be</a>.</p>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="index.html" class="back-home">Back to Home</a>
+            <a href="#" class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Back to top ↑</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="assets/images/App logo.png" alt="N" class="logo-image">
+                        <span class="logo-text">utrea</span>
+                    </div>
+                    <p class="footer-tagline">AI-powered nutrition tracking for a healthier you</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Product</h4>
+                        <ul>
+                            <li><a href="index.html#features">Features</a></li>
+                            <li><a href="index.html#how-it-works">How It Works</a></li>
+                            <li><a href="index.html#download">Download</a></li>
+                            <li><a href="#">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-use.html">Terms of Use</a></li>
+                            <li><a href="delete-account.html">Delete Your Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nutrea. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="https://www.instagram.com/nutrea_app" target="_blank" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
