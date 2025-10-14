@@ -148,14 +148,17 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Store button click handlers
+// Store button click handlers - Only prevent default for buttons without href
 const storeButtons = document.querySelectorAll('.store-button');
 storeButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        const storeName = button.querySelector('.store-name').textContent;
-        alert(`Thank you for your interest! ${storeName} download coming soon.`);
-    });
+    const href = button.getAttribute('href');
+    if (!href || href === '#') {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const storeName = button.querySelector('.store-name').textContent;
+            alert(`Thank you for your interest! ${storeName} download coming soon.`);
+        });
+    }
 });
 
 // Features Slideshow Functionality
@@ -403,5 +406,36 @@ function debounce(func, wait) {
 // Apply debounce to scroll-heavy functions
 const debouncedUpdateNavLink = debounce(updateActiveNavLink, 100);
 window.addEventListener('scroll', debouncedUpdateNavLink);
+
+// Social Media Follower Counts (Dynamic)
+const socialFollowerCounts = {
+    instagram: 7757,    // Real follower count
+    tiktok: 10200       // Real follower count (10.2k)
+};
+
+// Animate social follower counts when section is visible
+const socialFollowerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            entry.target.classList.add('animated');
+
+            const instagramElement = document.querySelector('[data-platform="instagram"]');
+            const tiktokElement = document.querySelector('[data-platform="tiktok"]');
+
+            if (instagramElement) {
+                animateCounter(instagramElement, socialFollowerCounts.instagram);
+            }
+
+            if (tiktokElement) {
+                animateCounter(tiktokElement, socialFollowerCounts.tiktok);
+            }
+        }
+    });
+}, { threshold: 0.5 });
+
+const testimonialsSection = document.querySelector('.testimonials');
+if (testimonialsSection) {
+    socialFollowerObserver.observe(testimonialsSection);
+}
 
 console.log('Nutrea showcase website loaded successfully!');

@@ -64,10 +64,16 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--text-primary);
+}
+
+.logo-image {
+    height: 2.5rem;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-icon {
@@ -204,8 +210,15 @@ body {
 .hero-description {
     font-size: 1.2rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     line-height: 1.8;
+}
+
+.hero-speed {
+    font-size: 1.1rem;
+    color: var(--accent-orange);
+    font-weight: 600;
+    margin-bottom: 2rem;
 }
 
 .hero-buttons {
@@ -331,12 +344,23 @@ body {
     overflow: hidden;
 }
 
+.hero-food-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
 .scan-frame {
     width: 200px;
     height: 200px;
     border: 3px solid var(--accent-green);
     border-radius: 20px;
     position: relative;
+    z-index: 2;
 }
 
 .scan-frame::before,
@@ -368,6 +392,7 @@ body {
     height: 3px;
     background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
     animation: scan 2s infinite ease-in-out;
+    z-index: 3;
 }
 
 @keyframes scan {
@@ -532,73 +557,125 @@ body {
     border-radius: 6px;
 }
 
-/* How It Works Section */
+/* Why Choose Nutrea Section */
 .how-it-works {
     padding: 6rem 0;
     background: linear-gradient(180deg, var(--background-dark) 0%, var(--background-card) 100%);
 }
 
-.steps {
+.section-header-with-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    gap: 2rem;
+}
+
+.section-header-with-social .section-header {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.social-followers {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.social-follow-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--background-card);
+    border: 2px solid rgba(255, 140, 66, 0.2);
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-follow-link:hover {
+    border-color: var(--accent-orange);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 140, 66, 0.2);
+}
+
+.social-follow-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--accent-orange);
+}
+
+.social-follow-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.social-follow-info {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    align-items: flex-start;
 }
 
-.step {
-    display: grid;
-    grid-template-columns: 80px 1fr 200px;
-    gap: 2rem;
-    align-items: center;
-}
-
-.step-reverse {
-    grid-template-columns: 80px 1fr 200px;
-}
-
-.step-number {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--accent-green), var(--light-green));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
+.social-follow-count {
+    font-size: 1.2rem;
     font-weight: bold;
-    box-shadow: 0 10px 30px rgba(62, 165, 115, 0.3);
-}
-
-.step-content {
-    background-color: var(--background-card);
-    padding: 2rem;
-    border-radius: 20px;
-    border: 1px solid rgba(62, 165, 115, 0.1);
-}
-
-.step-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
     color: var(--text-primary);
 }
 
-.step-description {
-    color: var(--text-secondary);
-    line-height: 1.8;
+.social-follow-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
-.step-visual {
-    width: 200px;
-    height: 200px;
-    background: linear-gradient(135deg, rgba(29, 95, 63, 0.3), rgba(62, 165, 115, 0.2));
+.why-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.why-card {
+    background-color: var(--background-card);
+    padding: 2.5rem;
     border-radius: 20px;
+    border: 2px solid rgba(62, 165, 115, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-orange);
+    box-shadow: 0 15px 40px rgba(255, 140, 66, 0.2);
+}
+
+.why-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--accent-green);
+    background: linear-gradient(135deg, rgba(255, 140, 66, 0.1), rgba(62, 165, 115, 0.1));
+    border-radius: 50%;
+    border: 2px solid rgba(255, 140, 66, 0.3);
 }
 
-.step-icon {
-    font-size: 5rem;
+.why-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.why-description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
 }
 
 /* Testimonials Section */
@@ -861,22 +938,28 @@ body {
         margin-top: 3rem;
     }
 
-    .step {
-        grid-template-columns: 1fr;
+    .section-header-with-social {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-header-with-social .section-header {
         text-align: center;
-        gap: 1.5rem;
     }
 
-    .step-reverse {
+    .social-followers {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .social-follow-link {
+        width: 100%;
+    }
+
+    .why-cards {
         grid-template-columns: 1fr;
-    }
-
-    .step-number {
-        margin: 0 auto;
-    }
-
-    .step-visual {
-        margin: 0 auto;
+        gap: 2rem;
     }
 
     .footer-content {
