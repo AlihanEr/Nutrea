@@ -1160,7 +1160,7 @@ body {
 
 @media (max-width: 768px) {
     .hero {
-        overflow-x: hidden;
+        overflow: hidden;
         min-height: 100vh;
         max-height: 100vh;
         padding-top: 80px;
@@ -1170,6 +1170,7 @@ body {
     .hero-content {
         height: 100%;
         justify-content: space-between;
+        overflow: hidden;
     }
 
     .features {
