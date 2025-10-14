@@ -387,6 +387,16 @@ activeLinkStyle.textContent = `
         height: 2px;
         background-color: var(--accent-orange);
     }
+
+    /* Special styling for download button when active */
+    .btn-download.active-link {
+        color: var(--text-primary);
+        background-color: var(--light-orange);
+    }
+
+    .btn-download.active-link::after {
+        display: none;
+    }
 `;
 document.head.appendChild(activeLinkStyle);
 

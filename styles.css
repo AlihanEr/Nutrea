@@ -649,7 +649,8 @@ body {
 .why-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent-orange);
-    box-shadow: 0 15px 40px rgba(255, 140, 66, 0.2);
+    background: linear-gradient(135deg, var(--background-card), rgba(255, 140, 66, 0.15));
+    box-shadow: 0 15px 40px rgba(255, 140, 66, 0.3);
 }
 
 .why-icon {
@@ -700,7 +701,9 @@ body {
 
 .testimonial-card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent-green);
+    border-color: var(--accent-orange);
+    background: linear-gradient(135deg, var(--background-card), rgba(255, 140, 66, 0.15));
+    box-shadow: 0 15px 40px rgba(255, 140, 66, 0.3);
 }
 
 .testimonial-rating {
@@ -806,8 +809,9 @@ body {
 
 .store-button:hover {
     transform: translateY(-5px);
-    border-color: var(--accent-green);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-orange);
+    background: linear-gradient(135deg, var(--background-dark), rgba(255, 140, 66, 0.15));
+    box-shadow: 0 15px 40px rgba(255, 140, 66, 0.3);
 }
 
 .store-icon {
