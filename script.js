@@ -360,7 +360,9 @@ const updateActiveNavLink = () => {
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active-link');
-                if (link.getAttribute('href') === `#${sectionId}`) {
+                const linkHref = link.getAttribute('href');
+                // Handle both local (#contact) and cross-page (index.html#contact) links
+                if (linkHref === `#${sectionId}` || linkHref === `index.html#${sectionId}`) {
                     link.classList.add('active-link');
                 }
             });
