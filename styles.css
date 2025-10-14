@@ -285,132 +285,193 @@ body {
     font-size: 0.9rem;
 }
 
-/* Phone Mockup */
+/* Hero Image Animation */
 .hero-image {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 500px;
 }
 
-.phone-mockup {
-    width: 300px;
-    height: 600px;
-    background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
-    border-radius: 40px;
-    padding: 15px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-    position: relative;
-    animation: phoneFloat 6s infinite ease-in-out;
-}
-
-@keyframes phoneFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-.phone-screen {
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-dark);
-    border-radius: 30px;
-    overflow: hidden;
-}
-
-.demo-content {
-    padding: 20px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.demo-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.demo-time {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-bottom: 20px;
-}
-
-.demo-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.scan-area {
-    flex: 1;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(29, 95, 63, 0.2), rgba(62, 165, 115, 0.1));
-    border-radius: 20px;
-    overflow: hidden;
+/* Food to photograph */
+.food-target {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .hero-food-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.scan-frame {
-    width: 200px;
+/* Phone camera coming from right */
+.phone-camera {
+    position: absolute;
+    right: -200px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-15deg);
+    z-index: 3;
+    animation: phoneSlideIn 8s ease-in-out infinite;
+}
+
+.phone-body {
+    width: 120px;
     height: 200px;
-    border: 3px solid var(--accent-green);
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
     border-radius: 20px;
     position: relative;
-    z-index: 2;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-.scan-frame::before,
-.scan-frame::after {
+.phone-camera-lens {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.phone-camera-lens::before,
+.phone-camera-lens::after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, #4a4a4a, #1a1a1a);
+    border-radius: 50%;
+    border: 2px solid #333;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.phone-camera-lens::before {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5),
+                inset 2px 2px 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Add third lens */
+.phone-body::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 3px solid var(--accent-green);
+    top: 73px;
+    left: 15px;
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, #4a4a4a, #1a1a1a);
+    border-radius: 50%;
+    border: 2px solid #333;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5),
+                inset 2px 2px 3px rgba(255, 255, 255, 0.2);
 }
 
-.scan-frame::before {
-    top: -3px;
-    left: -3px;
-    border-right: none;
-    border-bottom: none;
-}
-
-.scan-frame::after {
-    bottom: -3px;
-    right: -3px;
-    border-left: none;
-    border-top: none;
-}
-
-.scan-line {
+/* Camera flash effect */
+.camera-flash {
     position: absolute;
-    width: 200px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
-    animation: scan 2s infinite ease-in-out;
-    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), transparent 70%);
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 0;
+    animation: flashEffect 8s ease-in-out infinite;
+    pointer-events: none;
 }
 
-@keyframes scan {
-    0%, 100% { transform: translateY(-100px); }
-    50% { transform: translateY(100px); }
+/* Phone with result screen */
+.phone-result {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 4;
+    animation: showResult 8s ease-in-out infinite;
 }
 
-.scan-instruction {
-    text-align: center;
-    margin-top: 30px;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+.result-screen {
+    width: 300px;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+}
+
+/* Animations */
+@keyframes phoneSlideIn {
+    0% {
+        right: -200px;
+        transform: translateY(-50%) rotate(-15deg);
+        opacity: 1;
+    }
+    15% {
+        right: 100px;
+        transform: translateY(-50%) rotate(0deg);
+        opacity: 1;
+    }
+    25% {
+        right: 100px;
+        transform: translateY(-50%) rotate(0deg);
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        right: -200px;
+        transform: translateY(-50%) rotate(-15deg);
+        opacity: 0;
+    }
+}
+
+@keyframes flashEffect {
+    0%, 24% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    25% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    27% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes showResult {
+    0%, 30% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+    35% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    45% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
 }
 
 /* Features Section */
@@ -1017,8 +1078,18 @@ body {
         justify-content: center;
     }
 
-    .phone-mockup {
+    .hero-image {
         margin-top: 3rem;
+        min-height: 400px;
+    }
+
+    .food-target {
+        width: 280px;
+        height: 280px;
+    }
+
+    .result-screen {
+        width: 250px;
     }
 
     .section-header-with-social {
@@ -1133,17 +1204,36 @@ body {
         gap: 1.5rem;
     }
 
-    .phone-mockup {
-        width: 250px;
-        height: 500px;
+    .food-target {
+        width: 200px;
+        height: 200px;
     }
 
-    .scan-frame {
-        width: 150px;
-        height: 150px;
+    .result-screen {
+        width: 200px;
     }
 
-    .scan-line {
-        width: 150px;
+    .phone-body {
+        width: 100px;
+        height: 160px;
+    }
+
+    .phone-camera-lens {
+        top: 12px;
+        left: 12px;
+        gap: 6px;
+    }
+
+    .phone-camera-lens::before,
+    .phone-camera-lens::after {
+        width: 14px;
+        height: 14px;
+    }
+
+    .phone-body::after {
+        top: 58px;
+        left: 12px;
+        width: 14px;
+        height: 14px;
     }
 }
